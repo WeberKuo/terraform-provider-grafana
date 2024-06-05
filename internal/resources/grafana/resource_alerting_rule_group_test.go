@@ -365,7 +365,7 @@ resource "grafana_rule_group" "first" {
 	}
 }
 				`, name),
-				ExpectError: regexp.MustCompile(`rule with name "My Alert Rule" is defined more than once`),
+				ExpectError: regexp.MustCompile(`rule with name "My Alert Rule" is defined more than oncendnndndndn`),
 			},
 		},
 	})

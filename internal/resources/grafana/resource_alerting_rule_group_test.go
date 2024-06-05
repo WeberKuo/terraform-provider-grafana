@@ -307,12 +307,12 @@ resource "grafana_organization" "test" {
 	name = "%[1]s"
 }
 
-resource "grafana_folder" "testNameConflict" {
+resource "grafana_folder" "test" {
 	org_id = grafana_organization.test.id
 	title = "%[1]s-test"
 }
 
-resource "grafana_rule_group" "test" {
+resource "grafana_rule_group" "first" {
 	org_id = grafana_organization.test.id
 	name             = "%[1]s"
 	folder_uid       = grafana_folder.testNameConflict.uid
@@ -342,7 +342,7 @@ resource "grafana_rule_group" "test" {
 	}
 }
 
-resource "grafana_rule_group" "test" {
+resource "grafana_rule_group" "second" {
 	org_id = grafana_organization.test.id
 	name             = "%[1]s"
 	folder_uid       = grafana_folder.testNameConflict.uid

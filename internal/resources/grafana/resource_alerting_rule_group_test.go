@@ -343,6 +343,7 @@ resource "grafana_rule_group" "first" {
 }
 
 resource "grafana_rule_group" "second" {
+	depends_on = [ grafana_rule_group.first ]
 	org_id = grafana_organization.test.id
 	name             = "%[1]s"
 	folder_uid       = grafana_folder.test.uid
